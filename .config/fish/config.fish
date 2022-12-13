@@ -34,5 +34,9 @@ function mkcd
   cd $argv
 end
 
+function encrypt
+  openssl enc -aes-256-cbc -e -pbkdf2 -in vyos.tar -out vyos-keys.tar.env
+end
+
 # opam configuration
 source /home/dmbaturin/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
